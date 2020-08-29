@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Infra\devboost.dronedelivery.felipe.EF.csproj" />
+    <ProjectReference Include="..\..\Services\Services\devboost.dronedelivery.felipe.Services.csproj" />
+    <ProjectReference Include="..\DTO\devboost.dronedelivery.felipe.DTO.csproj" />
+  </ItemGroup>
+
+</Project>

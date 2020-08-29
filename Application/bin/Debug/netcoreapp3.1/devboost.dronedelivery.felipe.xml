@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>devboost.dronedelivery.felipe</name>
+    </assembly>
+    <members>
+        <member name="T:devboost.dronedelivery.felipe.Controllers.DronesController">
+            <summary>
+            Controller com operações referentes aos drones
+            </summary>
+        </member>
+        <member name="M:devboost.dronedelivery.felipe.Controllers.DronesController.GetStatusDrone">
+            <summary>
+            Retorna status dos drones
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:devboost.dronedelivery.felipe.Controllers.DronesController.PostDrone(devboost.dronedelivery.felipe.DTO.Models.Drone)">
+            <summary>
+            Cria um novo drone 
+            </summary>
+            <param name="drone">Drone</param>
+            <returns></returns>
+        </member>
+        <member name="T:devboost.dronedelivery.felipe.Controllers.LoginController">
+            <summary>
+            Controller com operações referentes aos drones
+            </summary>
+        </member>
+        <member name="T:devboost.dronedelivery.felipe.Controllers.PedidosController">
+            <summary>
+            Controller com as operações dos pedidos
+            </summary>
+        </member>
+        <member name="M:devboost.dronedelivery.felipe.Controllers.PedidosController.AssignDrone">
+            <summary>
+            Percorre lista de pedidos em espera adicionando um drone para os mesmos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:devboost.dronedelivery.felipe.Controllers.PedidosController.PostPedido(devboost.dronedelivery.felipe.DTO.Models.Pedido)">
+            <summary>
+            Adiciona um novo pedido
+            </summary>
+            <param name="pedido"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
