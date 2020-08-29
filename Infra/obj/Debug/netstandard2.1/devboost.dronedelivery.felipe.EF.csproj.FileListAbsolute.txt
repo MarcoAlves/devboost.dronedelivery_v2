@@ -10,3 +10,15 @@ C:\Users\marqu\Documents\Git\devboost.dronedelivery\devboost.dronedelivery.felip
 C:\Users\marqu\Documents\Git\devboost.dronedelivery\devboost.dronedelivery.felipe\Infra\obj\Debug\netstandard2.1\devboost.dronedelivery.felipe.EF.csproj.CopyComplete
 C:\Users\marqu\Documents\Git\devboost.dronedelivery\devboost.dronedelivery.felipe\Infra\obj\Debug\netstandard2.1\devboost.dronedelivery.felipe.EF.dll
 C:\Users\marqu\Documents\Git\devboost.dronedelivery\devboost.dronedelivery.felipe\Infra\obj\Debug\netstandard2.1\devboost.dronedelivery.felipe.EF.pdb
+C:\Users\marqu\Documents\Git\devboost.dronedelivery_v2\devboost.dronedelivery_v2\Infra\bin\Debug\netstandard2.1\devboost.dronedelivery.felipe.EF.deps.json
+C:\Users\marqu\Documents\Git\devboost.dronedelivery_v2\devboost.dronedelivery_v2\Infra\bin\Debug\netstandard2.1\devboost.dronedelivery.felipe.EF.dll
+C:\Users\marqu\Documents\Git\devboost.dronedelivery_v2\devboost.dronedelivery_v2\Infra\bin\Debug\netstandard2.1\devboost.dronedelivery.felipe.EF.pdb
+C:\Users\marqu\Documents\Git\devboost.dronedelivery_v2\devboost.dronedelivery_v2\Infra\bin\Debug\netstandard2.1\devboost.dronedelivery.felipe.DTO.dll
+C:\Users\marqu\Documents\Git\devboost.dronedelivery_v2\devboost.dronedelivery_v2\Infra\bin\Debug\netstandard2.1\devboost.dronedelivery.felipe.DTO.pdb
+C:\Users\marqu\Documents\Git\devboost.dronedelivery_v2\devboost.dronedelivery_v2\Infra\obj\Debug\netstandard2.1\devboost.dronedelivery.felipe.EF.csprojAssemblyReference.cache
+C:\Users\marqu\Documents\Git\devboost.dronedelivery_v2\devboost.dronedelivery_v2\Infra\obj\Debug\netstandard2.1\devboost.dronedelivery.felipe.EF.AssemblyInfoInputs.cache
+C:\Users\marqu\Documents\Git\devboost.dronedelivery_v2\devboost.dronedelivery_v2\Infra\obj\Debug\netstandard2.1\devboost.dronedelivery.felipe.EF.AssemblyInfo.cs
+C:\Users\marqu\Documents\Git\devboost.dronedelivery_v2\devboost.dronedelivery_v2\Infra\obj\Debug\netstandard2.1\devboost.dronedelivery.felipe.EF.csproj.CopyComplete
+C:\Users\marqu\Documents\Git\devboost.dronedelivery_v2\devboost.dronedelivery_v2\Infra\obj\Debug\netstandard2.1\devboost.dronedelivery.felipe.EF.dll
+C:\Users\marqu\Documents\Git\devboost.dronedelivery_v2\devboost.dronedelivery_v2\Infra\obj\Debug\netstandard2.1\devboost.dronedelivery.felipe.EF.pdb
+C:\Users\marqu\Documents\Git\devboost.dronedelivery_v2\devboost.dronedelivery_v2\Infra\obj\Debug\netstandard2.1\devboost.dronedelivery.felipe.EF.csproj.CoreCompileInputs.cache

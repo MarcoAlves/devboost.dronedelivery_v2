@@ -8048,11 +8048,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\marqu\\Documents\\Git\\devboost.dronedelivery\\devboost.dronedelivery.felipe\\Services\\Services\\devboost.dronedelivery.felipe.Services.csproj",
+      "projectUniqueName": "C:\\Users\\marqu\\Documents\\Git\\devboost.dronedelivery_v2\\devboost.dronedelivery_v2\\Services\\Services\\devboost.dronedelivery.felipe.Services.csproj",
       "projectName": "devboost.dronedelivery.felipe.Services",
-      "projectPath": "C:\\Users\\marqu\\Documents\\Git\\devboost.dronedelivery\\devboost.dronedelivery.felipe\\Services\\Services\\devboost.dronedelivery.felipe.Services.csproj",
+      "projectPath": "C:\\Users\\marqu\\Documents\\Git\\devboost.dronedelivery_v2\\devboost.dronedelivery_v2\\Services\\Services\\devboost.dronedelivery.felipe.Services.csproj",
       "packagesPath": "C:\\Users\\marqu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\marqu\\Documents\\Git\\devboost.dronedelivery\\devboost.dronedelivery.felipe\\Services\\Services\\obj\\",
+      "outputPath": "C:\\Users\\marqu\\Documents\\Git\\devboost.dronedelivery_v2\\devboost.dronedelivery_v2\\Services\\Services\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\marqu\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -8068,11 +8068,11 @@
       "frameworks": {
         "netstandard2.1": {
           "projectReferences": {
-            "C:\\Users\\marqu\\Documents\\Git\\devboost.dronedelivery\\devboost.dronedelivery.felipe\\Domain\\DTO\\devboost.dronedelivery.felipe.DTO.csproj": {
-              "projectPath": "C:\\Users\\marqu\\Documents\\Git\\devboost.dronedelivery\\devboost.dronedelivery.felipe\\Domain\\DTO\\devboost.dronedelivery.felipe.DTO.csproj"
+            "C:\\Users\\marqu\\Documents\\Git\\devboost.dronedelivery_v2\\devboost.dronedelivery_v2\\Domain\\DTO\\devboost.dronedelivery.felipe.DTO.csproj": {
+              "projectPath": "C:\\Users\\marqu\\Documents\\Git\\devboost.dronedelivery_v2\\devboost.dronedelivery_v2\\Domain\\DTO\\devboost.dronedelivery.felipe.DTO.csproj"
             },
-            "C:\\Users\\marqu\\Documents\\Git\\devboost.dronedelivery\\devboost.dronedelivery.felipe\\Infra\\devboost.dronedelivery.felipe.EF.csproj": {
-              "projectPath": "C:\\Users\\marqu\\Documents\\Git\\devboost.dronedelivery\\devboost.dronedelivery.felipe\\Infra\\devboost.dronedelivery.felipe.EF.csproj"
+            "C:\\Users\\marqu\\Documents\\Git\\devboost.dronedelivery_v2\\devboost.dronedelivery_v2\\Infra\\devboost.dronedelivery.felipe.EF.csproj": {
+              "projectPath": "C:\\Users\\marqu\\Documents\\Git\\devboost.dronedelivery_v2\\devboost.dronedelivery_v2\\Infra\\devboost.dronedelivery.felipe.EF.csproj"
             }
           }
         }

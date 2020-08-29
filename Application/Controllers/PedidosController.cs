@@ -47,6 +47,8 @@ namespace devboost.dronedelivery.felipe.Controllers
         [HttpPost]
         public async Task<ActionResult<Pedido>> PostPedido(Pedido pedido)
         {
+
+            ///var teste = User.FindFirst("sub")?.Value
             pedido.DataHoraInclusao = DateTime.Now;
             pedido.Situacao = (int)StatusPedido.AGUARDANDO;
             await _pedidoRepository.SavePedidoAsync(pedido);

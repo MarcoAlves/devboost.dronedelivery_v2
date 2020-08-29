@@ -7,3 +7,12 @@ C:\Users\marqu\Documents\Git\devboost.dronedelivery\devboost.dronedelivery.felip
 C:\Users\marqu\Documents\Git\devboost.dronedelivery\devboost.dronedelivery.felipe\Domain\DTO\obj\Debug\netstandard2.1\devboost.dronedelivery.felipe.DTO.csproj.CoreCompileInputs.cache
 C:\Users\marqu\Documents\Git\devboost.dronedelivery\devboost.dronedelivery.felipe\Domain\DTO\obj\Debug\netstandard2.1\devboost.dronedelivery.felipe.DTO.dll
 C:\Users\marqu\Documents\Git\devboost.dronedelivery\devboost.dronedelivery.felipe\Domain\DTO\obj\Debug\netstandard2.1\devboost.dronedelivery.felipe.DTO.pdb
+C:\Users\marqu\Documents\Git\devboost.dronedelivery_v2\devboost.dronedelivery_v2\Domain\DTO\bin\Debug\netstandard2.1\devboost.dronedelivery.felipe.DTO.deps.json
+C:\Users\marqu\Documents\Git\devboost.dronedelivery_v2\devboost.dronedelivery_v2\Domain\DTO\bin\Debug\netstandard2.1\devboost.dronedelivery.felipe.DTO.dll
+C:\Users\marqu\Documents\Git\devboost.dronedelivery_v2\devboost.dronedelivery_v2\Domain\DTO\bin\Debug\netstandard2.1\devboost.dronedelivery.felipe.DTO.pdb
+C:\Users\marqu\Documents\Git\devboost.dronedelivery_v2\devboost.dronedelivery_v2\Domain\DTO\obj\Debug\netstandard2.1\devboost.dronedelivery.felipe.DTO.csprojAssemblyReference.cache
+C:\Users\marqu\Documents\Git\devboost.dronedelivery_v2\devboost.dronedelivery_v2\Domain\DTO\obj\Debug\netstandard2.1\devboost.dronedelivery.felipe.DTO.AssemblyInfoInputs.cache
+C:\Users\marqu\Documents\Git\devboost.dronedelivery_v2\devboost.dronedelivery_v2\Domain\DTO\obj\Debug\netstandard2.1\devboost.dronedelivery.felipe.DTO.AssemblyInfo.cs
+C:\Users\marqu\Documents\Git\devboost.dronedelivery_v2\devboost.dronedelivery_v2\Domain\DTO\obj\Debug\netstandard2.1\devboost.dronedelivery.felipe.DTO.csproj.CoreCompileInputs.cache
+C:\Users\marqu\Documents\Git\devboost.dronedelivery_v2\devboost.dronedelivery_v2\Domain\DTO\obj\Debug\netstandard2.1\devboost.dronedelivery.felipe.DTO.dll
+C:\Users\marqu\Documents\Git\devboost.dronedelivery_v2\devboost.dronedelivery_v2\Domain\DTO\obj\Debug\netstandard2.1\devboost.dronedelivery.felipe.DTO.pdb

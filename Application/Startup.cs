@@ -42,16 +42,25 @@ namespace devboost.dronedelivery.felipe
         {
             services.AddSingleton<IDroneRepository, DroneRepository>();
             services.AddSingleton<IPedidoDroneRepository, PedidoDroneRepository>();
+            services.AddSingleton<IClienteRepository, ClienteRepository>();
+            services.AddSingleton<IPedidoRepository, PedidoRepository>();
+
             services.AddSingleton<IPedidoService, PedidoService>();
             services.AddSingleton<IDroneService, DroneService>();
             services.AddSingleton<ICoordinateService, CoordinateService>();
+
             services.AddSingleton<IPedidoFacade, PedidoFacade>();
             services.AddSingleton<IDroneFacade, DroneFacade>();
+            services.AddSingleton<IClienteFacade, ClienteFacade>();
 
             // Configurando o uso da classe de contexto para
             // acesso às tabelas do ASP.NET Identity Core
+
+            //services.AddDbContext<ApplicationDbContext>(options =>
+            //    options.UseInMemoryDatabase("InMemoryDatabase"));
+
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseInMemoryDatabase("InMemoryDatabase"));
+                options.UseSqlServer(Configuration.GetConnectionString(ProjectConsts.CONNECTION_STRING_CONFIG)));
 
             // Ativando a utilização do ASP.NET Identity, a fim de
             // permitir a recuperação de seus objetos via injeção de

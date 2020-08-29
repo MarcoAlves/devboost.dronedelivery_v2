@@ -16,6 +16,8 @@ namespace devboost.dronedelivery.felipe.EF.Data
 
         public DbSet<Drone> Drone { get; set; }
 
+        public DbSet<Cliente> Cliente { get; set; }
+
         public DbSet<PedidoDrone> PedidoDrones { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

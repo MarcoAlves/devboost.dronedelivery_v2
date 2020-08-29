@@ -19,7 +19,31 @@ namespace devboost.dronedelivery.felipe.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("devboost.dronedelivery.felipe.EF.Entities.Drone", b =>
+            modelBuilder.Entity("devboost.dronedelivery.felipe.DTO.Models.Cliente", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<double>("Latitude")
+                        .HasColumnType("float");
+
+                    b.Property<double>("Longitude")
+                        .HasColumnType("float");
+
+                    b.Property<string>("Nome")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Cliente");
+                });
+
+            modelBuilder.Entity("devboost.dronedelivery.felipe.DTO.Models.Drone", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -46,12 +70,15 @@ namespace devboost.dronedelivery.felipe.Migrations
                     b.ToTable("Drone");
                 });
 
-            modelBuilder.Entity("devboost.dronedelivery.felipe.EF.Entities.Pedido", b =>
+            modelBuilder.Entity("devboost.dronedelivery.felipe.DTO.Models.Pedido", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ClienteId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("DataHoraFinalizacao")
                         .HasColumnType("datetime2");
@@ -62,15 +89,6 @@ namespace devboost.dronedelivery.felipe.Migrations
                     b.Property<DateTime>("DataUltimaAlteracao")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("DroneId")
-                        .HasColumnType("int");
-
-                    b.Property<double>("Latitude")
-                        .HasColumnType("float");
-
-                    b.Property<double>("Longitude")
-                        .HasColumnType("float");
-
                     b.Property<int>("Peso")
                         .HasColumnType("int");
 
@@ -79,10 +97,12 @@ namespace devboost.dronedelivery.felipe.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ClienteId");
+
                     b.ToTable("Pedido");
                 });
 
-            modelBuilder.Entity("devboost.dronedelivery.felipe.EF.Entities.PedidoDrone", b =>
+            modelBuilder.Entity("devboost.dronedelivery.felipe.DTO.Models.PedidoDrone", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -92,8 +112,8 @@ namespace devboost.dronedelivery.felipe.Migrations
                     b.Property<DateTime>("DataHoraFinalizacao")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Distancia")
-                        .HasColumnType("int");
+                    b.Property<double>("Distancia")
+                        .HasColumnType("float");
 
                     b.Property<int>("DroneId")
                         .HasColumnType("int");
@@ -113,15 +133,24 @@ namespace devboost.dronedelivery.felipe.Migrations
                     b.ToTable("PedidoDrones");
                 });
 
-            modelBuilder.Entity("devboost.dronedelivery.felipe.EF.Entities.PedidoDrone", b =>
+            modelBuilder.Entity("devboost.dronedelivery.felipe.DTO.Models.Pedido", b =>
                 {
-                    b.HasOne("devboost.dronedelivery.felipe.EF.Entities.Drone", "Drone")
+                    b.HasOne("devboost.dronedelivery.felipe.DTO.Models.Cliente", "Cliente")
+                        .WithMany()
+                        .HasForeignKey("ClienteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("devboost.dronedelivery.felipe.DTO.Models.PedidoDrone", b =>
+                {
+                    b.HasOne("devboost.dronedelivery.felipe.DTO.Models.Drone", "Drone")
                         .WithMany()
                         .HasForeignKey("DroneId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("devboost.dronedelivery.felipe.EF.Entities.Pedido", "Pedido")
+                    b.HasOne("devboost.dronedelivery.felipe.DTO.Models.Pedido", "Pedido")
                         .WithMany()
                         .HasForeignKey("PedidoId")
                         .OnDelete(DeleteBehavior.Cascade)

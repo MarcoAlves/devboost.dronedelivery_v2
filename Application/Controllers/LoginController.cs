@@ -1,7 +1,10 @@
 ﻿using devboost.dronedelivery.felipe.DTO.Models;
+using devboost.dronedelivery.felipe.Facade.Interface;
 using devboost.dronedelivery.felipe.Security;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace devboost.dronedelivery.felipe.Controllers
 {
@@ -11,10 +14,16 @@ namespace devboost.dronedelivery.felipe.Controllers
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
-    public class LoginController
+    public class LoginController : ControllerBase
     {
-        public LoginController()
+
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly IClienteFacade _clienteFacade;
+
+        public LoginController(UserManager<ApplicationUser> userManager, IClienteFacade clienteFacade)
         {
+            _userManager = userManager;
+            _clienteFacade = clienteFacade;
         }
 
         [AllowAnonymous]
@@ -33,6 +42,33 @@ namespace devboost.dronedelivery.felipe.Controllers
                     Message = "Falha ao autenticar"
                 };
             }
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        [Route("CreateUser")]
+        public ActionResult CreateUser(User usuario)
+        {
+
+
+            var user = _userManager.CreateAsync(
+                new ApplicationUser()
+                    {
+                        UserName = usuario.UserID,
+                        Email = "",
+                        EmailConfirmed = true
+                    }, "AdminAPIDrone01!");
+
+            var cliente = _clienteFacade.Save(new Cliente()
+            {
+                Latitude = usuario.Latitude,
+                Longitude = usuario.Longitude,
+                Nome = usuario.UserID,
+                UserId = user.Id
+            });
+                
+            return Ok();
+
         }
 
 

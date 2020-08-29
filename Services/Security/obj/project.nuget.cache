@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ecSr38XyRIs6xt9g4LUNY70M8CHpnBTqLGp+yddgob9nCg2zBd/J50BA69nSd+TuMxVabFnjazNVQJ9vyB3x6Q==",
+  "dgSpecHash": "G2EcxB8czSSQoD2/46w7xe5OhOenEY37oZ3aq8I+WxlVWzNRL5jDXqIEAOoIbRDppqfOBiu4B+EEOHsn7FUu2A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\marqu\\Documents\\Git\\devboost.dronedelivery\\devboost.dronedelivery.felipe\\Services\\Security\\devboost.dronedelivery.felipe.Security.csproj",
+  "projectFilePath": "C:\\Users\\marqu\\Documents\\Git\\devboost.dronedelivery_v2\\devboost.dronedelivery_v2\\Services\\Security\\devboost.dronedelivery.felipe.Security.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\marqu\\.nuget\\packages\\dapper\\2.0.35\\dapper.2.0.35.nupkg.sha512",
     "C:\\Users\\marqu\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",

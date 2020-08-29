@@ -6,7 +6,7 @@ namespace devboost.dronedelivery.felipe.DTO.Extensions
     {
         public static Point GetPoint(this Pedido pedido)
         {
-            return new Point(pedido.Latitude, pedido.Longitude);
+            return new Point(-20, -21); // TO DO
         }
     }
 }

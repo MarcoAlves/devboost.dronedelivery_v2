@@ -23,5 +23,22 @@ namespace devboost.dronedelivery.felipe.EF
 
             return new DataContext(dbContextBuilder.Options);
         }
+
+
+        public ApplicationDbContext CreateApplicationContext(string[] args)
+        {
+            var configuration = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json")
+                .Build();
+
+            var dbContextBuilder = new  DbContextOptionsBuilder<ApplicationDbContext>();
+
+            var connectionString = configuration.GetConnectionString("grupo4devboostdronedeliveryContext");
+
+            dbContextBuilder.UseSqlServer(connectionString);
+
+            return new ApplicationDbContext(dbContextBuilder.Options);
+        }
     }
 }

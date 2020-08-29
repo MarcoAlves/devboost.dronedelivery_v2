@@ -3436,7 +3436,10 @@
         },
         "runtime": {
           "bin/placeholder/devboost.dronedelivery.felipe.Security.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "devboost.dronedelivery.felipe.Services/1.0.0": {
         "type": "project",
@@ -10501,11 +10504,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\marqu\\Documents\\Git\\devboost.dronedelivery\\devboost.dronedelivery.felipe\\Application\\devboost.dronedelivery.felipe.csproj",
+      "projectUniqueName": "C:\\Users\\marqu\\Documents\\Git\\devboost.dronedelivery_v2\\devboost.dronedelivery_v2\\Application\\devboost.dronedelivery.felipe.csproj",
       "projectName": "devboost.dronedelivery.felipe",
-      "projectPath": "C:\\Users\\marqu\\Documents\\Git\\devboost.dronedelivery\\devboost.dronedelivery.felipe\\Application\\devboost.dronedelivery.felipe.csproj",
+      "projectPath": "C:\\Users\\marqu\\Documents\\Git\\devboost.dronedelivery_v2\\devboost.dronedelivery_v2\\Application\\devboost.dronedelivery.felipe.csproj",
       "packagesPath": "C:\\Users\\marqu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\marqu\\Documents\\Git\\devboost.dronedelivery\\devboost.dronedelivery.felipe\\Application\\obj\\",
+      "outputPath": "C:\\Users\\marqu\\Documents\\Git\\devboost.dronedelivery_v2\\devboost.dronedelivery_v2\\Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\marqu\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -10521,17 +10524,17 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\marqu\\Documents\\Git\\devboost.dronedelivery\\devboost.dronedelivery.felipe\\Domain\\DTO\\devboost.dronedelivery.felipe.DTO.csproj": {
-              "projectPath": "C:\\Users\\marqu\\Documents\\Git\\devboost.dronedelivery\\devboost.dronedelivery.felipe\\Domain\\DTO\\devboost.dronedelivery.felipe.DTO.csproj"
+            "C:\\Users\\marqu\\Documents\\Git\\devboost.dronedelivery_v2\\devboost.dronedelivery_v2\\Domain\\DTO\\devboost.dronedelivery.felipe.DTO.csproj": {
+              "projectPath": "C:\\Users\\marqu\\Documents\\Git\\devboost.dronedelivery_v2\\devboost.dronedelivery_v2\\Domain\\DTO\\devboost.dronedelivery.felipe.DTO.csproj"
             },
-            "C:\\Users\\marqu\\Documents\\Git\\devboost.dronedelivery\\devboost.dronedelivery.felipe\\Domain\\Facade\\devboost.dronedelivery.felipe.Facade.csproj": {
-              "projectPath": "C:\\Users\\marqu\\Documents\\Git\\devboost.dronedelivery\\devboost.dronedelivery.felipe\\Domain\\Facade\\devboost.dronedelivery.felipe.Facade.csproj"
+            "C:\\Users\\marqu\\Documents\\Git\\devboost.dronedelivery_v2\\devboost.dronedelivery_v2\\Domain\\Facade\\devboost.dronedelivery.felipe.Facade.csproj": {
+              "projectPath": "C:\\Users\\marqu\\Documents\\Git\\devboost.dronedelivery_v2\\devboost.dronedelivery_v2\\Domain\\Facade\\devboost.dronedelivery.felipe.Facade.csproj"
             },
-            "C:\\Users\\marqu\\Documents\\Git\\devboost.dronedelivery\\devboost.dronedelivery.felipe\\Infra\\devboost.dronedelivery.felipe.EF.csproj": {
-              "projectPath": "C:\\Users\\marqu\\Documents\\Git\\devboost.dronedelivery\\devboost.dronedelivery.felipe\\Infra\\devboost.dronedelivery.felipe.EF.csproj"
+            "C:\\Users\\marqu\\Documents\\Git\\devboost.dronedelivery_v2\\devboost.dronedelivery_v2\\Infra\\devboost.dronedelivery.felipe.EF.csproj": {
+              "projectPath": "C:\\Users\\marqu\\Documents\\Git\\devboost.dronedelivery_v2\\devboost.dronedelivery_v2\\Infra\\devboost.dronedelivery.felipe.EF.csproj"
             },
-            "C:\\Users\\marqu\\Documents\\Git\\devboost.dronedelivery\\devboost.dronedelivery.felipe\\Services\\Security\\devboost.dronedelivery.felipe.Security.csproj": {
-              "projectPath": "C:\\Users\\marqu\\Documents\\Git\\devboost.dronedelivery\\devboost.dronedelivery.felipe\\Services\\Security\\devboost.dronedelivery.felipe.Security.csproj"
+            "C:\\Users\\marqu\\Documents\\Git\\devboost.dronedelivery_v2\\devboost.dronedelivery_v2\\Services\\Security\\devboost.dronedelivery.felipe.Security.csproj": {
+              "projectPath": "C:\\Users\\marqu\\Documents\\Git\\devboost.dronedelivery_v2\\devboost.dronedelivery_v2\\Services\\Security\\devboost.dronedelivery.felipe.Security.csproj"
             }
           }
         }
