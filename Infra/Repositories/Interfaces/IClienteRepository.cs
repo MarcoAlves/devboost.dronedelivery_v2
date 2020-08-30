@@ -8,7 +8,13 @@ namespace devboost.dronedelivery.felipe.EF.Repositories.Interfaces
     {
 
         Task Save(Cliente cliente);
+        Task Delete(int clienteId);
+
+
+
         Task<List<Cliente>> GetAll();
+        Task<Cliente> GetById(int clienteId);
+        Task<Cliente> GetByName(string nome);
  
     }
 }

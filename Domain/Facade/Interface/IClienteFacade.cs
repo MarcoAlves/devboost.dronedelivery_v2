@@ -7,6 +7,7 @@ namespace devboost.dronedelivery.felipe.Facade.Interface
     {
 
         Task Save(Cliente cliente);
+        Task Delete(int clienteId);
 
 
     }

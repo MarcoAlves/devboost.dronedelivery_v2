@@ -2,6 +2,7 @@
 using devboost.dronedelivery.felipe.DTO.Models;
 using devboost.dronedelivery.felipe.EF.Data;
 using devboost.dronedelivery.felipe.EF.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,13 @@ namespace devboost.dronedelivery.felipe.EF.Repositories
 
         }
 
+        public Task<Cliente> GetById(int clienteId)
+        {
+            var cliente = _context.Cliente.FirstOrDefaultAsync(_ => _.Id == clienteId);
+
+            return cliente;
+        }
+
         public async Task<List<Cliente>> GetAll()
         {
             var clientes = _context.Cliente.ToList();
@@ -30,9 +38,26 @@ namespace devboost.dronedelivery.felipe.EF.Repositories
             return clientes;
         }
 
+        public Task<Cliente> GetByName(string nome)
+        {
+            var cliente  = _context.Cliente.FirstOrDefaultAsync(_ => _.Nome == nome);
+
+            return cliente;
+
+        }
+
         public async Task Save(Cliente cliente)
         {
             _context.Cliente.Add(cliente);
+
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task Delete(int clienteId)
+        {
+            var cliente = _context.Cliente.FirstOrDefault(_ => _.Id == clienteId);
+
+            _context.Cliente.Remove(cliente);
 
             await _context.SaveChangesAsync();
         }

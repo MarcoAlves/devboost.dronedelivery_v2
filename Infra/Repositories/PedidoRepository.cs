@@ -2,7 +2,9 @@
 using devboost.dronedelivery.felipe.DTO.Models;
 using devboost.dronedelivery.felipe.EF.Data;
 using devboost.dronedelivery.felipe.EF.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace devboost.dronedelivery.felipe.EF.Repositories
@@ -23,6 +25,13 @@ namespace devboost.dronedelivery.felipe.EF.Repositories
         {
             _context.Pedido.Add(pedido);
             await _context.SaveChangesAsync();
+        }
+
+        public Task<Pedido> GetById(int pedidoId)
+        {
+            var pedido = _context.Pedido.FirstOrDefaultAsync(_ => _.Id == pedidoId);
+
+            return pedido;
         }
     }
 }

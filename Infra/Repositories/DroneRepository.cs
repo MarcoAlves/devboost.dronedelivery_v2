@@ -5,6 +5,7 @@ using devboost.dronedelivery.felipe.DTO.Enums;
 using devboost.dronedelivery.felipe.DTO.Models;
 using devboost.dronedelivery.felipe.EF.Data;
 using devboost.dronedelivery.felipe.EF.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -18,12 +19,18 @@ namespace devboost.dronedelivery.felipe.EF.Repositories
     {
         private readonly DataContext _context;
         private readonly string _connectionString;
+        private readonly IClienteRepository _clienteRepository;
+        private readonly IPedidoRepository _pedidoRepository;
 
         public DroneRepository(DataContext context,
-            IConfiguration configuration)
+            IConfiguration configuration,
+            IClienteRepository clienteRepository,
+            IPedidoRepository pedidoRepository)
         {
             _context = context;
             _connectionString = configuration.GetConnectionString(ProjectConsts.CONNECTION_STRING_CONFIG);
+            _clienteRepository = clienteRepository;
+            _pedidoRepository = pedidoRepository;
 
         }
 
@@ -37,12 +44,31 @@ namespace devboost.dronedelivery.felipe.EF.Repositories
         {
             return _context.Drone.FirstOrDefault();
         }
+        public Drone RetornaDroneApto(double distancia, int peso)
+        {
+            return _context.Drone.Where(_ => _.Perfomance > distancia && _.Capacidade > peso).FirstOrDefault();
+        }
 
         public async Task<List<StatusDroneDto>> GetDroneStatusAsync()
         {
 
             using SqlConnection conexao = new SqlConnection(_connectionString);
             var resultado = await conexao.QueryAsync<StatusDroneDto>(GetStatusSqlCommand()).ConfigureAwait(false);
+
+            foreach (var item in resultado)
+            {
+                var pedido = await _pedidoRepository.GetById(item.PedidoId);
+                if(pedido != null)
+                {
+                    var cliente = await _clienteRepository.GetById(pedido.ClienteId);
+
+                    item.Cliente = new ClienteDTO();
+                    item.Cliente.Id = cliente.Id;
+                    item.Cliente.Nome = cliente.Nome;
+                    item.Cliente.Coordenada = cliente.Latitude.ToString() + ", " + cliente.Longitude; 
+                }
+
+            }
             return resultado.ToList();
         }
         public async Task<DroneStatusDto> RetornaDroneStatus(int droneId)
@@ -66,22 +92,30 @@ namespace devboost.dronedelivery.felipe.EF.Repositories
 
         private string GetStatusSqlCommand()
         {
-            var stringBuilder = new StringBuilder();
-            stringBuilder.Append(GetSelectPedidos(0, StatusEnvio.AGUARDANDO));
-            stringBuilder.AppendLine(" union");
-            stringBuilder.Append(GetSelectPedidos(1, StatusEnvio.EM_TRANSITO));
-            stringBuilder.AppendLine(" union");
-            stringBuilder.AppendLine(" select b.Id as DroneId,");
-            stringBuilder.AppendLine(" 1 as Situacao,");
-            stringBuilder.AppendLine(" 0 as PedidoId");
-            stringBuilder.AppendLine(" from  Drone b");
-            stringBuilder.AppendLine(" where b.Id NOT IN  (");
-            stringBuilder.AppendLine(" select a.DroneId");
-            stringBuilder.AppendLine(" from PedidoDrones a");
-            stringBuilder.AppendLine($" where a.StatusEnvio <> {(int)StatusEnvio.FINALIZADO}");
-            stringBuilder.AppendLine(" and a.DataHoraFinalizacao > dateadd(hour,-3,CURRENT_TIMESTAMP)");
-            stringBuilder.AppendLine(")");
-            return stringBuilder.ToString();
+
+            var sql = @"
+                SELECT 
+                Drone.Id as 'droneId',
+
+                (CASE 
+	                WHEN StatusEnvio = 0 THEN 'AGUARDANDO'
+	                WHEN StatusEnvio = 1 THEN 'EM TRANSITO'
+	                WHEN StatusEnvio = 2 THEN 'FINALIZADO'
+	                ELSE ''
+                END) as 'Situacao',
+                PedidoId,
+                Cliente.Id as 'Cliente.Id',
+                Cliente.Nome as 'Cliente.Nome',
+                CONVERT(varchar(20), Cliente.Latitude) + ', ' + CONVERT(varchar(20), Cliente.Longitude) as 'Cliente.Coordenada'
+
+
+                FROM Drone
+                LEFT JOIN PedidoDrones ON PedidoDrones.DroneId = Drone.Id
+                LEFT JOIN Pedido ON Pedido.Id = PedidoDrones.PedidoId
+                LEFT JOIN Cliente ON Cliente.Id = Pedido.ClienteId";
+
+            return sql;
+
         }
 
         private static string GetSqlCommand(int droneId)
@@ -100,9 +134,11 @@ namespace devboost.dronedelivery.felipe.EF.Repositories
             return stringBuilder.ToString();
         }
 
+        public Task<List<Drone>> GetAll()
+        {
+            var drones = _context.Drone.ToListAsync();
 
-
-
-
+            return drones;
+        }
     }
 }

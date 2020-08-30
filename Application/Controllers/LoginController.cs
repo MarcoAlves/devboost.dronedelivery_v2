@@ -47,11 +47,11 @@ namespace devboost.dronedelivery.felipe.Controllers
         [AllowAnonymous]
         [HttpPost]
         [Route("CreateUser")]
-        public ActionResult CreateUser(User usuario)
+        public async Task<ActionResult> CreateUser(User usuario)
         {
 
 
-            var user = _userManager.CreateAsync(
+            var result = await _userManager.CreateAsync(
                 new ApplicationUser()
                     {
                         UserName = usuario.UserID,
@@ -59,13 +59,16 @@ namespace devboost.dronedelivery.felipe.Controllers
                         EmailConfirmed = true
                     }, "AdminAPIDrone01!");
 
-            var cliente = _clienteFacade.Save(new Cliente()
-            {
-                Latitude = usuario.Latitude,
-                Longitude = usuario.Longitude,
-                Nome = usuario.UserID,
-                UserId = user.Id
-            });
+            if (!result.Succeeded) 
+                return BadRequest(result.Errors);
+
+            //var cliente = _clienteFacade.Save(new Cliente()
+            //{
+            //    Latitude = usuario.Latitude,
+            //    Longitude = usuario.Longitude,
+            //    Nome = usuario.UserID,
+            //    UserId = user.Id
+            //});
                 
             return Ok();
 

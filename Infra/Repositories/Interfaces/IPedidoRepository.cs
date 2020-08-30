@@ -7,5 +7,7 @@ namespace devboost.dronedelivery.felipe.EF.Repositories.Interfaces
     {
         Task SavePedidoAsync(Pedido pedido);
 
+        Task<Pedido> GetById(int pedidoId);
+
     }
 }

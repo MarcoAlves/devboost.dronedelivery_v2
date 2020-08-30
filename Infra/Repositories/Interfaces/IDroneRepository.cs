@@ -1,6 +1,7 @@
 ﻿using devboost.dronedelivery.felipe.DTO;
 using devboost.dronedelivery.felipe.DTO.Models;
 using System.Collections.Generic;
+using System.Net;
 using System.Threading.Tasks;
 
 namespace devboost.dronedelivery.felipe.EF.Repositories.Interfaces
@@ -11,7 +12,10 @@ namespace devboost.dronedelivery.felipe.EF.Repositories.Interfaces
         Task<DroneStatusDto> RetornaDroneStatus(int droneId);
         Drone RetornaDrone();
         Task SaveDrone(Drone drone);
+        Drone RetornaDroneApto(double distancia, int peso);
 
+
+        Task<List<Drone>> GetAll();
 
     }
 }

@@ -87,6 +87,8 @@ namespace devboost.dronedelivery.felipe
             services.AddJwtSecurity(
                 signingConfigurations, tokenConfigurations);
 
+            services.AddAuthorization();
+
             services.AddCors();
             services.AddControllers();
 

@@ -12,7 +12,7 @@ namespace devboost.dronedelivery.felipe.Controllers
     /// <summary>
     /// Controller com operações referentes aos drones
     /// </summary>
-    [Authorize("Bearer")]
+    
     [Route("api/[controller]")]
     [ApiController]
     public class DronesController : ControllerBase
@@ -43,7 +43,7 @@ namespace devboost.dronedelivery.felipe.Controllers
         /// <param name="drone">Drone</param>
         /// <returns></returns>
         [HttpPost]
-        [Authorize(Roles.ROLE_API_DRONE)]
+        [Authorize(Roles = Roles.ROLE_API_DRONE)]
         public async Task<ActionResult<Drone>> PostDrone(Drone drone)
         {
             drone.Perfomance = (drone.Autonomia / 60.0f) * drone.Velocidade;

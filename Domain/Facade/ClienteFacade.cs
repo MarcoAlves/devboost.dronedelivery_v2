@@ -16,6 +16,11 @@ namespace devboost.dronedelivery.felipe.Facade
             _clienteRepository = clienteRepository;
         }
 
+        public Task Delete(int clienteId)
+        {
+            return _clienteRepository.Delete(clienteId);
+        }
+
         public Task Save(Cliente cliente)
         {
             

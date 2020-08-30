@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 using System.Security.Claims;
 using System.Security.Principal;
 
@@ -58,11 +59,15 @@ namespace devboost.dronedelivery.felipe.Security
 
         public Token GenerateToken(User user)
         {
+            var userIdentity = _userManager.FindByNameAsync(user.UserID).Result;
+            var role = _userManager.GetRolesAsync(userIdentity).Result;
+
             ClaimsIdentity identity = new ClaimsIdentity(
                 new GenericIdentity(user.UserID, "Login"),
                 new[] {
                         new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString("N")),
-                        new Claim(JwtRegisteredClaimNames.UniqueName, user.UserID)
+                        new Claim(JwtRegisteredClaimNames.UniqueName, user.UserID),
+                        new Claim(ClaimTypes.Role, role.FirstOrDefault())
                 }
             );
 

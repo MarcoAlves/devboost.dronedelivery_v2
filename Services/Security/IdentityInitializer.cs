@@ -52,6 +52,18 @@ namespace devboost.dronedelivery.felipe.Security
                         EmailConfirmed = true
                     }, "UsrInvAPIDrone01!");
             }
+
+            if (!_roleManager.RoleExistsAsync(Roles.ROLE_API_DRONE).Result)
+            {
+                var resultado = _roleManager.CreateAsync(
+                    new IdentityRole(Roles.ROLE_API_DRONE)).Result;
+                if (!resultado.Succeeded)
+                {
+                    throw new Exception(
+                        $"Erro durante a criação da role {Roles.ROLE_API_DRONE}.");
+                }
+            }
+
         }
         private void CreateUser(
             ApplicationUser user,

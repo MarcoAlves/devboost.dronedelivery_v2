@@ -7,9 +7,6 @@ namespace devboost.dronedelivery.felipe.DTO.Models
 
         public int Id { get; set; }
 
-        [Required]
-        public int UserId { get; set; }
-
         public string Nome { get; set; }
 
         [Required(ErrorMessage = "Latitude deve ser informada!")]

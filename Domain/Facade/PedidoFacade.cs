@@ -27,6 +27,10 @@ namespace devboost.dronedelivery.felipe.Facade
             foreach (var pedido in pedidos)
             {
                 var drone = await _pedidoService.DroneAtendePedido(pedido);
+
+                if (drone == null)
+                    continue;
+
                 await AtualizaPedidoAsync(pedido).ConfigureAwait(false);
                 await AdicionarPedidoDrone(pedido, drone).ConfigureAwait(false);
 
